@@ -17,11 +17,10 @@ associated audio feedback upon throw execution.
 public class PlayerAction : MonoBehaviour
 {
 [SerializeField] private GameObject[] foodItems;
-private AudioSource audioSource;
-
+public AudioSource sfxThrowSource;
 private void Start()
 {
-    audioSource = GetComponent<AudioSource>();
+    sfxThrowSource = GetComponent<AudioSource>();
 }
 
 // Called by: Player Input
@@ -71,12 +70,12 @@ private void ThrowFood(int index)
         Rigidbody rb = spawnedFood.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.AddForce(transform.forward * 15f, ForceMode.Impulse);
+            rb.AddForce(transform.up * 10f, ForceMode.Impulse);
         }
 
-        if (audioSource != null && audioSource.clip != null)
+        if (sfxThrowSource != null && sfxThrowSource.clip != null)
         {
-            audioSource.PlayOneShot(audioSource.clip);
+            sfxThrowSource.PlayOneShot(sfxThrowSource.clip);
         }
     }
 }
