@@ -37,17 +37,21 @@ private void SelectFood(string keyName)
 {
     int index = 0;
 
-    if (keyName == "j" || keyName.ToLower().Contains("j"))
+    if (keyName == "h" || keyName.ToLower().Contains("h"))
     {
         index = 0;
     }
-    else if (keyName == "i" || keyName.ToLower().Contains("i"))
+    else if (keyName == "u" || keyName.ToLower().Contains("u"))
     {
         index = 1;
     }
-    else if (keyName == "l" || keyName.ToLower().Contains("l"))
+    else if (keyName == "i" || keyName.ToLower().Contains("i"))
     {
         index = 2;
+    }
+     else if (keyName == "l" || keyName.ToLower().Contains("l"))
+    {
+        index = 3;
     }
 
     ThrowFood(index);
@@ -67,12 +71,12 @@ private void ThrowFood(int index)
         Rigidbody rb = spawnedFood.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.AddForce(transform.forward * 20f, ForceMode.Impulse);
+            rb.AddForce(transform.forward * 15f, ForceMode.Impulse);
         }
 
         if (audioSource != null && audioSource.clip != null)
         {
-            audioSource.Play();
+            audioSource.PlayOneShot(audioSource.clip);
         }
     }
 }

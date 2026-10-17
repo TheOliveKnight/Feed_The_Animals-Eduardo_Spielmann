@@ -17,7 +17,7 @@ the character animator parameters based on movement state.
 public class PlayerMovement : MonoBehaviour
 {
 [SerializeField] private float playerSpeed;
-private float centerToEdge_ = 22.0f;
+private float centerToEdge_ = 15.0f;
 private Vector2 movementDirection;
 private Animator animator;
 
@@ -49,7 +49,7 @@ private void Move()
 
     if (animator != null)
     {
-        bool isMoving = Mathf.Abs(movementDirection.x) > 0.01f;
+        bool isMoving = Mathf.Abs(movementDirection.x) > 0.005f;
         animator.SetBool("IsRunning", isMoving);
     }
 }
