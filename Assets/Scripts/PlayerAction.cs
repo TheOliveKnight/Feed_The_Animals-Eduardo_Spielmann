@@ -12,6 +12,7 @@ Description:
 Handles selecting and throwing food items from the player's position, playing
 
 associated audio feedback upon throw execution.
+
 */
 
 public class PlayerAction : MonoBehaviour
@@ -23,7 +24,7 @@ private void Start()
     sfxThrowSource = GetComponent<AudioSource>();
 }
 
-// Called by: Player Input
+// Called by player input
 public void OnFeedInput(InputAction.CallbackContext ctx)
 {
     if (ctx.performed)
@@ -32,6 +33,7 @@ public void OnFeedInput(InputAction.CallbackContext ctx)
     }
 }
 
+// This section handles the keyboard keys to food keys
 private void SelectFood(string keyName)
 {
     int index = 0;
@@ -56,6 +58,7 @@ private void SelectFood(string keyName)
     ThrowFood(index);
 }
 
+// throws the food based on the index
 private void ThrowFood(int index)
 {
     if (foodItems == null || index < 0 || index >= foodItems.Length)
@@ -70,11 +73,13 @@ private void ThrowFood(int index)
         Rigidbody rb = spawnedFood.GetComponent<Rigidbody>();
         if (rb != null)
         {
+            // throws up b/c the player is rotated 90 for the sprite and its animations
             rb.AddForce(transform.up * 10f, ForceMode.Impulse);
         }
 
         if (sfxThrowSource != null && sfxThrowSource.clip != null)
         {
+            // playoneshot so it can play multiple times without needing to wait for the first audio to finish, also its named sfxThrow so I can know the difference in the editor
             sfxThrowSource.PlayOneShot(sfxThrowSource.clip);
         }
     }
