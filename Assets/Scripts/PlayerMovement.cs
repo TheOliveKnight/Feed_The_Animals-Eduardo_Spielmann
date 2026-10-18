@@ -24,7 +24,7 @@ private Vector2 movementDirection;
 private Animator animator;
 public AudioSource audioSource;
 private bool isMoving;
-[SerializeField] private float stepInterval = 0.4f; // Time in seconds between each sound
+[SerializeField] private float stepInterval = 0.4f; // time between each sound
 private float stepTimer;
 private void Start()
 {
@@ -36,7 +36,7 @@ private void Update()
     Move();
 }
 
-// Called by: Player Input
+// Called by player input
 public void OnMovementInput(InputAction.CallbackContext ctx)
 {
     movementDirection = ctx.ReadValue<Vector2>(); 
@@ -57,7 +57,7 @@ private void Move()
         animator.SetBool("IsRunning", isMoving);
     }
 
-    //Next section handles the internal clock
+    //Next section handles the internal clock for sound and took me so long b/c I left the audio source as private :(
 
    // Debug.Log($"{isMoving}");
     // Handle repeating movement audio
@@ -73,12 +73,12 @@ private void Move()
                 {
                     audioSource.PlayOneShot(audioSource.clip);
                 }
-                stepTimer = 0f; // Reset the timer after playing
+                stepTimer = 0f; // Reset the timer after playing the sound effect
             }
         }
     else
     {
-            // Reset timer immediately when stopping so the next movement starts instantly
+            // Resets timer immediately when stopping so the next sound can start again if needed
             stepTimer = 0f; 
     }
 }
