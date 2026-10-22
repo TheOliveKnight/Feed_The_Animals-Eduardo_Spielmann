@@ -40,7 +40,7 @@ private void Update()
 public void OnMovementInput(InputAction.CallbackContext ctx)
 {
     movementDirection = ctx.ReadValue<Vector2>(); 
-    // Debug.Log($"inputvalue{movementDirection}");
+    //Debug.Log($"inputvalue{movementDirection}");
 }
 
 private void Move()

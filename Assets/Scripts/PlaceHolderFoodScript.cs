@@ -1,14 +1,15 @@
 using UnityEngine;
 
-/*GameObject: the food prefabs or smth like that, it could be used on any object that needs to be destroyed after a certain time
+/*GameObject: the food prefabs  
 
 Componet: PlaceHolderScriptFood
 
-Description: wrote it on the "GameObject"
+Description: any object that needs to be destroyed after a certain time
 */
 public class PlaceHolderFoodScript : MonoBehaviour
 {
 
+[SerializeField] private Animator animator;
 [SerializeField] private float lifeDuration = 5f;
 
 private void Start()

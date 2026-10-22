@@ -18,10 +18,15 @@ associated audio feedback upon throw execution.
 public class PlayerAction : MonoBehaviour
 {
 [SerializeField] private GameObject[] foodItems;
+[SerializeField] private Animator playerAnimator;
 public AudioSource sfxThrowSource;
+
+//This IsThrowing is for playermovement
+public bool IsThrowing { get; private set; }
 private void Start()
 {
     sfxThrowSource = GetComponent<AudioSource>();
+    playerAnimator = GetComponent<Animator>();
 }
 
 // Called by player input
@@ -66,10 +71,24 @@ private void ThrowFood(int index)
         return;
     }
 
+    if (IsThrowing)
+    {
+        return;
+    }
+
+    IsThrowing = true;
+
     if (foodItems[index] != null)
     {
         GameObject spawnedFood = Instantiate(foodItems[index], transform.position, Quaternion.identity);
 
+        if (playerAnimator != null)
+        {
+            IsThrowing = true;
+            Debug.Log($"Throw has started");
+            playerAnimator.SetTrigger("Throw");
+        }
+    
         Rigidbody rb = spawnedFood.GetComponent<Rigidbody>();
         if (rb != null)
         {
@@ -84,4 +103,9 @@ private void ThrowFood(int index)
         }
     }
 }
+    public void FinishThrowAnimation()
+    {
+     IsThrowing = false;
+        Debug.Log("Throw finished - movement unlocked");
+    }
 }
