@@ -85,7 +85,7 @@ private void ThrowFood(int index)
         if (playerAnimator != null)
         {
             IsThrowing = true;
-            Debug.Log($"Throw has started");
+            //Debug.Log($"Throw has started");
             playerAnimator.SetTrigger("Throw");
         }
     
@@ -105,7 +105,7 @@ private void ThrowFood(int index)
 }
     public void FinishThrowAnimation()
     {
-     IsThrowing = false;
-        Debug.Log("Throw finished - movement unlocked");
+        IsThrowing = false;
+        //Debug.Log("Throw finished - movement unlocked");
     }
 }

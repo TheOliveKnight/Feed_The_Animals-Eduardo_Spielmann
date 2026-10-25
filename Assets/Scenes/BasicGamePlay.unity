@@ -1940,7 +1940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f52b946693e54048af74f5cd6ba49f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.31
+      value: 1.88
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6f52b946693e54048af74f5cd6ba49f8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2237,9 +2237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6299df00cc7824a0b9998b910a8686fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  playerSpeed: -15
+  playerSpeed: -20
   audioSource: {fileID: 549996986}
-  stepInterval: 0.3
+  stepInterval: 0.2
 --- !u!114 &549996981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,7 +2772,6 @@ GameObject:
   - component: {fileID: 688186210}
   - component: {fileID: 688186209}
   - component: {fileID: 688186208}
-  - component: {fileID: 688186211}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2809,7 +2808,7 @@ MonoBehaviour:
   - {fileID: 6446994767106467844, guid: 748ee4ca58006492fbca6cc3572a800f, type: 3}
   animalsToFeed: 20
   spawnStart: 3
-  startFrequency: 1.2
+  startFrequency: 3
   spawnZPosition: -9
   centerToEdge: 15
 --- !u!4 &688186210
@@ -2827,18 +2826,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &688186211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 688186207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d72248834fda4298ae33f753108ca96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Test_
 --- !u!1 &701139733
 GameObject:
   m_ObjectHideFlags: 0
