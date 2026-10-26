@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AnimalMove
   animalSpeed: 2
-  outOfScene: 14.5
+  outOfScene: 1000
 --- !u!114 &-9042027289663614867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EatFood
   foodItEats: 
+  pointsToAdd: 1
 --- !u!65 &-1746700165894681445
 BoxCollider:
   m_ObjectHideFlags: 0

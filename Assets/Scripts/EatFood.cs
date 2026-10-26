@@ -27,13 +27,12 @@ public class EatFood : MonoBehaviour
 
                 // Transition: Move to 'Not Hungry' state
                 isHungry = false;
-                Debug.Log($"{gameObject.name} ate {foodItEats}, score updated, and is no longer hungry.");
             }
         }
         else
         {
             // FSM State: Not Hungry - Ignores food collisions
-            Debug.Log($"{gameObject.name} is not hungry and ignored the food.");
+            //Debug.Log($"{gameObject.name} is not hungry and ignored the food.");
         }
     }
 }

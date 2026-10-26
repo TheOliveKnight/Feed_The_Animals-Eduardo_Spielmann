@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
     
     private Label animalsRemainingUI;
     private Label scoreUI;
-    private int animalsRemaining;
+    public int animalsRemaining;
     private int score = 0;
 
     private void Awake()
