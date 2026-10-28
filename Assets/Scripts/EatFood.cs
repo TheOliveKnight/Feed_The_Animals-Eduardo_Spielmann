@@ -22,7 +22,6 @@ public class EatFood : MonoBehaviour
                 if (UIManager.Instance != null)
                 {
                     UIManager.Instance.ScoreUpdate(pointsToAdd);
-                    UIManager.Instance.AnimalsRemainingUpdate();
                 }
 
                 // Transition: Move to 'Not Hungry' state
