@@ -47,11 +47,11 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnAnimal()
     {
-       if (animalsSpawned < 20)
+       if (animalsSpawned < animalsToFeed)
         {
             Debug.Log($"AnimalsSpawned = {animalsSpawned}");
         // Instantiate an animal prefab at a random x-value within centerToEdge, zero y, and spawnZPosition z[cite: 2]
-        animalsSpawned += 1;
+        animalsSpawned++;
         int randomIndex = Random.Range(0, animalPrefab.Length);
         float randomX = Random.Range(-centerToEdge, centerToEdge);
         Vector3 spawnPos = new Vector3(randomX, 0.1f, spawnZPosition);
